@@ -1,0 +1,26 @@
+@import './shared.scss';
+
+.container {
+  @include dynamic_viewport_height;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.button {
+  padding: 10px 18px;
+  border-radius: 18px;
+  background: $primary;
+  color: $primaryText;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  &:hover {
+    background: lighten($primary, 8%);
+  }
+}

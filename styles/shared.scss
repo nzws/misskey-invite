@@ -1,0 +1,6 @@
+@import './theme.scss';
+
+@mixin dynamic_viewport_height {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
