@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "prettier --check --cache . && next lint && tsc --noEmit",
     "format": "prettier --write --cache .",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "dev": "next",
     "start": "next start",
     "analyze": "ANALYZE=true next build"
