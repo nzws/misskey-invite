@@ -15,6 +15,13 @@ export default async function API(req: NextApiRequest, res: NextApiResponse) {
   // @ts-expect-error: ???
   const userId = session.user.id as string;
 
+  if (!userId) {
+    res.status(401).json({
+      error: 'You must sign in'
+    });
+    return;
+  }
+
   const invites = await prisma.invite.findUnique({
     where: {
       userId
