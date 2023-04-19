@@ -10,7 +10,6 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     jwt({ token, account, user }) {
-      console.log(token, account, user);
       if (account) {
         token.id = user?.id;
       }
