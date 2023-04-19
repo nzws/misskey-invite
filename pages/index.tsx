@@ -46,7 +46,7 @@ export default function Page() {
     }
   }, [session, router]);
 
-  if (session.status === 'loading' || isLoading || isLoadingApi) {
+  if (session.status !== 'authenticated' || isLoading || isLoadingApi) {
     return (
       <div className={styles.container}>
         <MDSpinner size={48} singleColor="#e33636" />
@@ -65,7 +65,11 @@ export default function Page() {
 
   return (
     <div className={styles.container}>
-      <button className={styles.button} onClick={handleCreate}>
+      <button
+        className={styles.button}
+        onClick={handleCreate}
+        disabled={isLoadingApi}
+      >
         招待コードを作成
       </button>
     </div>
